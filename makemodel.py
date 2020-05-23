@@ -7,13 +7,16 @@
 
 
 import csv
+import codecs
 
 HEADER_CSV = None
+
+print('>>> Aviso!!!\n Antes de começar tenha certeza de que o arquivo .csv estar no mesmo diretório deste script\n para facilitar a operação, também é necessário ter certeza de qual o encoding e o delimitador\n usado no arquivo .csv para o correto funcionamento deste script\n')
 
 try:
     nome_csv = input('Nome do arquivo CSV: ')
     nome_delimiter = input('Tipo de delimitador do arquivo CSV: ')
-    with open(nome_csv) as csv_file:
+    with codecs.open(nome_csv, encoding='utf8') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=nome_delimiter)
         line_count = 0
         for row in csv_reader:
@@ -31,11 +34,11 @@ except FileNotFoundError:
 
 
 try:
-    nome_arquivo = input('Nome do arquivo a ser criado: ')
-    nome_model = input('Nome da Classe a ser criada: ')
-    arquivo = open(nome_arquivo, 'r+')
+    nome_arquivo = input('Nome do arquivo a ser criado (ex: model.py): ')
+    nome_model = input('Nome da Classe a ser criada (ex: User): ')
+    arquivo = codecs.open(nome_arquivo, 'r+', encoding='utf8')
 except FileNotFoundError:
-    arquivo = open(nome_arquivo, 'w+')
+    arquivo = codecs.open(nome_arquivo, 'w+', encoding='utf8')
     # arquivo.writelines(u'Arquivo criado pois nao existia')
     arquivo.writelines(u'from django.db import models \n\n')
     arquivo.writelines(f'class {nome_model}(models.Model):\n')
