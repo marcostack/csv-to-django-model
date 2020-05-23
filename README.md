@@ -1,4 +1,4 @@
-# django-model-to-csv
+# csv to django model
 Script created to automate the development of Django model schemas based on CSV file
 
 
