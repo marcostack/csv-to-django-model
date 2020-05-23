@@ -11,7 +11,9 @@ import codecs
 
 HEADER_CSV = None
 
-print('>>> Aviso!!!\n Antes de começar tenha certeza de que o arquivo .csv estar no mesmo diretório deste script\n para facilitar a operação, também é necessário ter certeza de qual o encoding e o delimitador\n usado no arquivo .csv para o correto funcionamento deste script\n')
+print('\n###########################################################################################################')
+print(' AVISO!!!\n Antes de começar tenha certeza de que o arquivo .csv estar no mesmo diretório deste script\n para facilitar a operação, também é necessário ter certeza de qual o encoding e o delimitador\n usado no arquivo .csv para o correto funcionamento deste script')
+print('###########################################################################################################\n')
 
 try:
     nome_csv = input('Nome do arquivo CSV: ')
